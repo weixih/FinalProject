@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d71a85ef-fd8f-48a2-99ff-78f272a84646" name="Changes" comment="eeeee">
-      <change afterPath="$PROJECT_DIR$/src/GUIWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUIWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +40,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "last_opened_file_path": "C:/Users/student/IdeaProjects/FinalProject",
     "project.structure.last.edited": "Modules",

@@ -1,8 +1,12 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 public class GUIWindow extends JFrame implements ActionListener {
     private JButton button1;
     private JButton button2;
@@ -11,15 +15,18 @@ public class GUIWindow extends JFrame implements ActionListener {
     private JLabel dogImage;
     private JPanel mainPanel;
 
+
+    private Dog allDogs = new Dog();
     private ArrayList<String> dogList;
 
     public GUIWindow(){
-        Dog allDogs = new Dog();
-        dogList = allDogs.getDogs();
+        allDogs.importAllDogs();
+        dogList = allDogs.getDogList();
+
 
         setContentPane(mainPanel);
         setTitle("Dog Quiz");
-        setSize(900, 800);
+        setSize(900, 830);
         setLocation(300, 0);
         button1.addActionListener(this);
         button2.addActionListener(this);
@@ -48,8 +55,18 @@ public class GUIWindow extends JFrame implements ActionListener {
     }
 
     public void play(){
-        dogImage =
+        try {
+            URL imageURL = new URL(allDogs.changeImageURL());
+            BufferedImage image = ImageIO.read(imageURL);
+            Image resizedImage = image.getScaledInstance(500, 500, Image.SCALE_DEFAULT);
+            ImageIcon icon = new ImageIcon(resizedImage);
+            dogImage.setIcon(icon);
+            dogImage.setSize(500,500);
+
+        } catch (IOException e) { }
     }
+
+
 
 
 }

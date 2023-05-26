@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -10,9 +10,13 @@ import org.json.JSONObject;
 
 public class Dog {
 
-    private ArrayList<String> dogList = getDogs();
+    private ArrayList<String> dogList = importAllDogs();
 
-    public ArrayList<String> getDogs(){
+    public ArrayList<String> getDogList() {
+        return dogList;
+    }
+
+    public ArrayList<String> importAllDogs(){
         String allDogsURL = "https://dog.ceo/api/breeds/list/all";
         String urlResponse = "";
         try {
@@ -92,6 +96,9 @@ public class Dog {
         int random2 = (int)(Math.random() * images.length());
         return (String) images.get(random2);
     }
+
+
+
 
 
 
