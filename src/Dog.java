@@ -11,9 +11,14 @@ import org.json.JSONObject;
 public class Dog {
 
     private ArrayList<String> dogList = importAllDogs();
+    private String chosenDog;
 
     public ArrayList<String> getDogList() {
         return dogList;
+    }
+
+    public String getChosenDog(){
+        return chosenDog;
     }
 
     public ArrayList<String> importAllDogs(){
@@ -79,6 +84,7 @@ public class Dog {
     public String changeImageURL(){
         int random = (int)(Math.random() * dogList.size());
         String breed = dogList.get(random);
+        chosenDog = breed;
 
         String imagesURL = "https://dog.ceo/api/breed/" + breed + "/images";
         String urlResponse = "";
