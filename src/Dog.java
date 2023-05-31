@@ -21,6 +21,7 @@ public class Dog {
         return chosenDog;
     }
 
+
     public ArrayList<String> importAllDogs(){
         String allDogsURL = "https://dog.ceo/api/breeds/list/all";
         String urlResponse = "";

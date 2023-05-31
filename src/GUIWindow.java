@@ -15,8 +15,14 @@ public class GUIWindow extends JFrame implements ActionListener {
     private JLabel dogImage;
     private JPanel mainPanel;
     private JPanel question;
+    private JLabel timer;
 
-    private Dog allDogs = new Dog();
+    private Timer countUpTimer;
+
+    private ActionListener timerListener;
+    private int seconds;
+
+    private Dog allDogs;
     private ArrayList<String> dogList;
 
     private int questions = 5;
@@ -25,10 +31,14 @@ public class GUIWindow extends JFrame implements ActionListener {
 
     private boolean buttonClicked;
 
+    private int correct;
+
     public GUIWindow(){
+        allDogs = new Dog();
         allDogs.importAllDogs();
         dogList = allDogs.getDogList();
         buttonClicked = false;
+        countUpTimer = new Timer(1000, null);
 
 
         setContentPane(mainPanel);
@@ -39,6 +49,8 @@ public class GUIWindow extends JFrame implements ActionListener {
         button2.addActionListener(this);
         button3.addActionListener(this);
         button4.addActionListener(this);
+        countUpTimer.addActionListener(this);
+        countUpTimer.start();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
     }
@@ -47,9 +59,11 @@ public class GUIWindow extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         Object source = e.getSource();
-        if (source instanceof JButton) {
+        if (source instanceof Timer) {
+            changeTime();
+
+        }else if (source instanceof JButton) {
             JButton button = (JButton) source;
-            int correct = 0;
             if(correctButton == 1){
                 if (button.equals(button1)) {
                     correct++;
@@ -83,12 +97,11 @@ public class GUIWindow extends JFrame implements ActionListener {
     public void play(){
         int count = 0;
         while(count < questions){
-            while(buttonClicked == false && count != 0){
-
-            }
 
             try {
-                URL imageURL = new URL(allDogs.changeImageURL());
+                String change = allDogs.changeImageURL();
+                System.out.println(change);
+                URL imageURL = new URL(change);
                 BufferedImage image = ImageIO.read(imageURL);
                 Image resizedImage = image.getScaledInstance(480, 480, Image.SCALE_DEFAULT);
                 ImageIcon icon = new ImageIcon(resizedImage);
@@ -98,6 +111,7 @@ public class GUIWindow extends JFrame implements ActionListener {
             } catch (IOException e) { }
 
             int correctButton = (int)(Math.random() * 4) + 1;
+            System.out.println(correctButton);
             this.correctButton = correctButton;
             String correctDog = allDogs.getChosenDog();
             String dog1 = dogList.get((int)(Math.random() * dogList.size()));
@@ -141,15 +155,35 @@ public class GUIWindow extends JFrame implements ActionListener {
             count++;
 
             buttonClicked = false;
+            while(buttonClicked == false && count != 0){
+
+            }
 
         }
 
-
+        System.out.println(correct);
 
 
     }
 
+    private void changeTime(){
+        seconds++;
+        int min = 0;
+        int sec = 0;
+        if(seconds< 60){
+            min = 0;
+            sec = seconds;
+        }else{
+            min = seconds/60;
+            sec = seconds%60;
+        }
+        if(sec % 10 < 10){
+            timer.setText(min + ":0" + sec);
+        }else{
+            timer.setText(min + ":" + sec);
+        }
 
+    }
 
 
 }
