@@ -11,6 +11,8 @@ public class endScreen extends JFrame{
         setTitle("Dog Quiz");
         setSize(850, 850);
         setLocation(300, 0);
+        setVisible(false);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
     public JLabel getTime(){
         return time;

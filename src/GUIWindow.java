@@ -110,7 +110,7 @@ public class GUIWindow extends JFrame implements ActionListener {
         while(count < questions){
             try {
                 String change = allDogs.changeImageURL();
-                System.out.println(change);
+
                 URL imageURL = new URL(change);
                 BufferedImage image = ImageIO.read(imageURL);
                 Image resizedImage = image.getScaledInstance(480, 480, Image.SCALE_DEFAULT);
@@ -121,7 +121,7 @@ public class GUIWindow extends JFrame implements ActionListener {
             } catch (IOException e) { }
 
             int correctButton = (int)(Math.random() * 4) + 1;
-            System.out.println(correctButton);
+
             this.correctButton = correctButton;
             String correctDog = allDogs.getChosenDog();
             String dog1 = dogList.get((int)(Math.random() * dogList.size()));
@@ -175,9 +175,8 @@ public class GUIWindow extends JFrame implements ActionListener {
 
         }
 
-        System.out.println(correct);
         info.setText("Time completed: " + time);
-        info2.setText("Amount correct : " + correct);
+        info2.setText("Score: " + correct + "/" + questions);
         setVisible(false);
         endScreen.setVisible(true);
     }

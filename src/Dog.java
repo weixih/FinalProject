@@ -70,7 +70,9 @@ public class Dog {
         String dog = "";
         for(int i = 0; i < dogs.length(); i++){
             if(dogs.substring(i, i+1).equals("\"")){
-                dogList.add(dog);
+                if(!dog.equals("mix")){
+                    dogList.add(dog);
+                }
                 dog = "";
             }else{
                 dog += dogs.substring(i, i+1);
@@ -85,10 +87,6 @@ public class Dog {
     public String changeImageURL(){
         int random = (int)(Math.random() * dogList.size());
         String breed = dogList.get(random);
-        while(breed.equals("mix")){
-            random = (int)(Math.random() * dogList.size());
-            breed = dogList.get(random);
-        }
         chosenDog = breed;
 
         String imagesURL = "https://dog.ceo/api/breed/" + breed + "/images";
