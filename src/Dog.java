@@ -85,6 +85,10 @@ public class Dog {
     public String changeImageURL(){
         int random = (int)(Math.random() * dogList.size());
         String breed = dogList.get(random);
+        while(breed.equals("mix")){
+            random = (int)(Math.random() * dogList.size());
+            breed = dogList.get(random);
+        }
         chosenDog = breed;
 
         String imagesURL = "https://dog.ceo/api/breed/" + breed + "/images";

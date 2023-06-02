@@ -14,13 +14,15 @@ public class GUIWindow extends JFrame implements ActionListener {
     private JButton button4;
     private JLabel dogImage;
     private JPanel mainPanel;
-    private JPanel question;
     private JLabel timer;
+    private JLabel questionNum;
 
     private Timer countUpTimer;
 
     private ActionListener timerListener;
     private int seconds;
+
+    private String time;
 
     private Dog allDogs;
     private ArrayList<String> dogList;
@@ -33,13 +35,21 @@ public class GUIWindow extends JFrame implements ActionListener {
 
     private int correct;
 
+    private endScreen endScreen;
+
+    private JLabel info;
+
+    private JLabel info2;
+
     public GUIWindow(){
+        endScreen = new endScreen();
+        info = endScreen.getTime();
+        info2 = endScreen.getCorrect();
         allDogs = new Dog();
         allDogs.importAllDogs();
         dogList = allDogs.getDogList();
         buttonClicked = false;
         countUpTimer = new Timer(1000, null);
-
 
         setContentPane(mainPanel);
         setTitle("Dog Quiz");
@@ -96,8 +106,8 @@ public class GUIWindow extends JFrame implements ActionListener {
 
     public void play(){
         int count = 0;
-        while(count < questions){
 
+        while(count < questions){
             try {
                 String change = allDogs.changeImageURL();
                 System.out.println(change);
@@ -117,6 +127,7 @@ public class GUIWindow extends JFrame implements ActionListener {
             String dog1 = dogList.get((int)(Math.random() * dogList.size()));
             String dog2 = dogList.get((int)(Math.random() * dogList.size()));
             String dog3 = dogList.get((int)(Math.random() * dogList.size()));
+
 
             while(dog1.equals(correctDog)){
                 dog1 = dogList.get((int)(Math.random() * dogList.size()));
@@ -152,9 +163,12 @@ public class GUIWindow extends JFrame implements ActionListener {
                 button3.setText(dog3);
                 button4.setText(correctDog);
             }
+            questionNum.setText("               " + Integer.toString(count+1) + ".");
             count++;
 
             buttonClicked = false;
+
+
             while(buttonClicked == false && count != 0){
 
             }
@@ -162,8 +176,10 @@ public class GUIWindow extends JFrame implements ActionListener {
         }
 
         System.out.println(correct);
-
-
+        info.setText("Time completed: " + time);
+        info2.setText("Amount correct : " + correct);
+        setVisible(false);
+        endScreen.setVisible(true);
     }
 
     private void changeTime(){
@@ -177,10 +193,12 @@ public class GUIWindow extends JFrame implements ActionListener {
             min = seconds/60;
             sec = seconds%60;
         }
-        if(sec % 10 < 10){
+        if(sec < 10){
             timer.setText(min + ":0" + sec);
+            time = min + ":0" + sec;
         }else{
             timer.setText(min + ":" + sec);
+            time = min + ":" + sec;
         }
 
     }
