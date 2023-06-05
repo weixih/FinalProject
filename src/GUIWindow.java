@@ -7,6 +7,9 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+
+import static java.lang.Thread.sleep;
+
 public class GUIWindow extends JFrame implements ActionListener {
     private JButton button1;
     private JButton button2;
@@ -40,6 +43,7 @@ public class GUIWindow extends JFrame implements ActionListener {
     private JLabel info;
 
     private JLabel info2;
+
 
     public GUIWindow(){
         endScreen = new endScreen();
@@ -104,10 +108,11 @@ public class GUIWindow extends JFrame implements ActionListener {
         }
     }
 
-    public void play(){
+    public void play() throws InterruptedException {
         int count = 0;
 
         while(count < questions){
+
             try {
                 String change = allDogs.changeImageURL();
 
@@ -119,6 +124,11 @@ public class GUIWindow extends JFrame implements ActionListener {
                 dogImage.setSize(500,500);
 
             } catch (IOException e) { }
+
+            button1.setBackground(Color.yellow);
+            button2.setBackground(Color.yellow);
+            button3.setBackground(Color.yellow);
+            button4.setBackground(Color.yellow);
 
             int correctButton = (int)(Math.random() * 4) + 1;
 
@@ -172,6 +182,30 @@ public class GUIWindow extends JFrame implements ActionListener {
             while(buttonClicked == false && count != 0){
 
             }
+            if(correctButton == 1){
+                button1.setBackground(Color.green);
+                button2.setBackground(Color.red);
+                button3.setBackground(Color.red);
+                button4.setBackground(Color.red);
+            }else if(correctButton == 2){
+                    button1.setBackground(Color.red);
+                    button2.setBackground(Color.green);
+                    button3.setBackground(Color.red);
+                    button4.setBackground(Color.red);
+            }
+            else if(correctButton == 3){
+                button1.setBackground(Color.red);
+                button2.setBackground(Color.red);
+                button3.setBackground(Color.green);
+                button4.setBackground(Color.red);
+            }else{
+                button1.setBackground(Color.red);
+                button2.setBackground(Color.red);
+                button3.setBackground(Color.red);
+                button4.setBackground(Color.green);
+            }
+            sleep(1500);
+
 
         }
 
@@ -195,11 +229,10 @@ public class GUIWindow extends JFrame implements ActionListener {
         if(sec < 10){
             timer.setText(min + ":0" + sec);
             time = min + ":0" + sec;
-        }else{
+        }else {
             timer.setText(min + ":" + sec);
             time = min + ":" + sec;
         }
-
     }
 
 

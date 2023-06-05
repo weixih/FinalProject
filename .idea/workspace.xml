@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d71a85ef-fd8f-48a2-99ff-78f272a84646" name="Changes" comment="eeeee">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUIWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUIWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/endScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/endScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/endScreen.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/endScreen.form" afterDir="false" />
     </list>
     <list id="e4181ab2-6ad2-4221-9b8d-d265e1c2ee4d" name="Changes by student" comment="" />
     <option name="SHOW_DIALOG" value="false" />

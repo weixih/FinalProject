@@ -72,7 +72,7 @@
                 </constraints>
                 <properties>
                   <autoscrolls value="true"/>
-                  <icon value="Capture.PNG"/>
+                  <icon value="image.PNG"/>
                   <text value=""/>
                 </properties>
               </component>
