@@ -19,6 +19,7 @@ public class GUIWindow extends JFrame implements ActionListener {
     private JPanel mainPanel;
     private JLabel timer;
     private JLabel questionNum;
+    private JLabel scoreTracker;
 
     private Timer countUpTimer;
 
@@ -81,24 +82,28 @@ public class GUIWindow extends JFrame implements ActionListener {
             if(correctButton == 1){
                 if (button.equals(button1)) {
                     correct++;
+                    scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
                 }
             }
             if(correctButton == 2){
                 if(button.equals(button2)) {
                     correct++;
+                    scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
                 }
             }
             if(correctButton == 3){
                 if(button.equals(button3)) {
                     correct++;
+                    scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
                 }
             }
             if(correctButton == 4){
                 if(button.equals(button4)) {
                     correct++;
+                    scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
                 }
             }
@@ -174,6 +179,7 @@ public class GUIWindow extends JFrame implements ActionListener {
                 button4.setText(correctDog);
             }
             questionNum.setText("               " + Integer.toString(count+1) + ".");
+            scoreTracker.setText("                                    " + correct + "/" + questions);
             count++;
 
             buttonClicked = false;
@@ -204,6 +210,8 @@ public class GUIWindow extends JFrame implements ActionListener {
                 button3.setBackground(Color.red);
                 button4.setBackground(Color.green);
             }
+
+
             sleep(1500);
 
 
