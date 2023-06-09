@@ -36,7 +36,6 @@ public class GUIWindow extends JFrame implements ActionListener {
 
     private int correctButton;
 
-    private boolean buttonClicked;
 
     private int correct;
 
@@ -54,7 +53,6 @@ public class GUIWindow extends JFrame implements ActionListener {
         allDogs = new Dog();
         allDogs.importAllDogs();
         dogList = allDogs.getDogList();
-        buttonClicked = false;
         countUpTimer = new Timer(1000, null);
 
         setContentPane(mainPanel);
@@ -84,7 +82,6 @@ public class GUIWindow extends JFrame implements ActionListener {
                 if (button.equals(button1)) {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
-                    buttonClicked = true;
 
                 }
             }
@@ -92,7 +89,6 @@ public class GUIWindow extends JFrame implements ActionListener {
                 if(button.equals(button2)) {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
-                    buttonClicked = true;
 
                 }
             }
@@ -100,7 +96,6 @@ public class GUIWindow extends JFrame implements ActionListener {
                 if(button.equals(button3)) {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
-                    buttonClicked = true;
 
                 }
             }
@@ -108,12 +103,10 @@ public class GUIWindow extends JFrame implements ActionListener {
                 if(button.equals(button4)) {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
-                    buttonClicked = true;
 
                 }
             }
 
-            buttonClicked = true;
             count++;
         }
     }
@@ -189,7 +182,6 @@ public class GUIWindow extends JFrame implements ActionListener {
             scoreTracker.setText("                                    " + correct + "/" + questions);
 
 
-            buttonClicked = false;
 
             
             while(count2 == count){
