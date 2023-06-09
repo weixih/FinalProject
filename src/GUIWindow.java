@@ -25,6 +25,7 @@ public class GUIWindow extends JFrame implements ActionListener {
 
     private ActionListener timerListener;
     private int seconds;
+    private int count;
 
     private String time;
 
@@ -84,6 +85,7 @@ public class GUIWindow extends JFrame implements ActionListener {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
+                    //count++;
                 }
             }
             if(correctButton == 2){
@@ -91,6 +93,7 @@ public class GUIWindow extends JFrame implements ActionListener {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
+                    //count++;
                 }
             }
             if(correctButton == 3){
@@ -98,6 +101,7 @@ public class GUIWindow extends JFrame implements ActionListener {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
+                    //count++;
                 }
             }
             if(correctButton == 4){
@@ -105,18 +109,21 @@ public class GUIWindow extends JFrame implements ActionListener {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
+                    //count++;
                 }
             }
 
             buttonClicked = true;
-
+            count++;
         }
     }
 
     public void play() throws InterruptedException {
-        int count = 0;
+//        count = 0;
+        int count2 = count;
 
         while(count < questions){
+
 
             try {
                 String change = allDogs.changeImageURL();
@@ -180,14 +187,18 @@ public class GUIWindow extends JFrame implements ActionListener {
             }
             questionNum.setText("               " + Integer.toString(count+1) + ".");
             scoreTracker.setText("                                    " + correct + "/" + questions);
-            count++;
+            //count++;
 
             buttonClicked = false;
 
+//            while(buttonClicked == false && count != 0){
+//
+//            }
 
-            while(buttonClicked == false && count != 0){
-
+            while(count2 == count){
+                System.out.println(count);
             }
+            count2 = count;
             if(correctButton == 1){
                 button1.setBackground(Color.green);
                 button2.setBackground(Color.red);
