@@ -191,7 +191,7 @@ public class GUIWindow extends JFrame implements ActionListener {
 
             buttonClicked = false;
 
-
+            
             while(count2 == count){
                 System.out.print("");
             }
