@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d71a85ef-fd8f-48a2-99ff-78f272a84646" name="Changes" comment="jwaididaoida">
+    <list default="true" id="d71a85ef-fd8f-48a2-99ff-78f272a84646" name="Changes" comment="weqweqeqeqweqfafaafs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUIWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUIWindow.java" afterDir="false" />
     </list>
@@ -97,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685980481818</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="weqweqeqeqweqfafaafs">
+      <created>1686321846651</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686321846651</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,7 +121,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="eeeee" />
     <MESSAGE value="jwaididaoida" />
-    <option name="LAST_COMMIT_MESSAGE" value="jwaididaoida" />
+    <MESSAGE value="weqweqeqeqweqfafaafs" />
+    <option name="LAST_COMMIT_MESSAGE" value="weqweqeqeqweqfafaafs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

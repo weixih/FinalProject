@@ -85,7 +85,7 @@ public class GUIWindow extends JFrame implements ActionListener {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
-                    //count++;
+
                 }
             }
             if(correctButton == 2){
@@ -93,7 +93,7 @@ public class GUIWindow extends JFrame implements ActionListener {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
-                    //count++;
+
                 }
             }
             if(correctButton == 3){
@@ -101,7 +101,7 @@ public class GUIWindow extends JFrame implements ActionListener {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
-                    //count++;
+
                 }
             }
             if(correctButton == 4){
@@ -109,7 +109,7 @@ public class GUIWindow extends JFrame implements ActionListener {
                     correct++;
                     scoreTracker.setText("                                    " + correct + "/" + questions);
                     buttonClicked = true;
-                    //count++;
+
                 }
             }
 
@@ -119,7 +119,7 @@ public class GUIWindow extends JFrame implements ActionListener {
     }
 
     public void play() throws InterruptedException {
-//        count = 0;
+
         int count2 = count;
 
         while(count < questions){
@@ -187,17 +187,15 @@ public class GUIWindow extends JFrame implements ActionListener {
             }
             questionNum.setText("               " + Integer.toString(count+1) + ".");
             scoreTracker.setText("                                    " + correct + "/" + questions);
-            //count++;
+
 
             buttonClicked = false;
 
-//            while(buttonClicked == false && count != 0){
-//
-//            }
 
             while(count2 == count){
-                System.out.println(count);
+                System.out.print("");
             }
+
             count2 = count;
             if(correctButton == 1){
                 button1.setBackground(Color.green);
